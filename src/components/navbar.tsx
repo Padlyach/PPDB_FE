@@ -55,7 +55,7 @@ export default function Navbar() {
           {/* Dropdown Data Kunjungan */}
           <li className="relative">
             <button onClick={() => setIsKunjunganOpen(!isKunjunganOpen)} className="relative py-2 text-[#00215E] hover:text-[#FAA300] transition-colors duration-300 after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#FFD700] after:left-0 after:bottom-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">
-              DATA KUNJUNGAN
+              DATA KUNJUNGAN GACOR
             </button>
             {isKunjunganOpen && (
               <ul className="absolute bg-white shadow-xl mt-2 rounded-lg overflow-hidden z-50 text-sm text-left">
