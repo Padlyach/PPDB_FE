@@ -28,7 +28,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link href="/profil-sekolah" className="relative py-2 text-[#00215E] hover:text-[#FAA300] transition-colors duration-300 after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#FFD700] after:left-0 after:bottom-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">
-             PORTAL PPDB
+            PORTAL PPDB
             </Link>
           </li>
           <li>
