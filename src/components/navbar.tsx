@@ -14,7 +14,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
         {/* Logo dan Nama Sekolah */}
         <div className="flex items-center space-x-3 group cursor-pointer">
-          <Image src="/smk.png" alt="Logo Sekolah" width={60} height={60} className="rounded-full transform transition-transform duration-300 group-hover:scale-110 shadow-lg hover:shadow-xl" />
+          <Image src="/smk.png" alt="Logo Sekolah" width={60} height={60} className="transform transition-transform duration-300 group-hover:scale-110" />
           <h5 className="text-3xl font-black text-center">
             <span className="text-[#00215E]">PPDB</span> <span className="text-[#FAA300]">SMK INFORMATIKA PESAT</span>
           </h5>
