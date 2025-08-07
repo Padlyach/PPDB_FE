@@ -47,9 +47,7 @@ export default function Home() {
                   <p className="text-gray-600">Mitra Industri</p>
                 </div>
               </div>  
-              <div> 
-                <Link href="/website/sma" onClick={() => setIsOpen(false)} className="w-20 h-20 rounded-lg">SMA</Link>
-              </div>
+              
             </div>
             <div className="relative h-[400px]">
               <Image
