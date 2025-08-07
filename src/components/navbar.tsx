@@ -23,7 +23,7 @@ export default function Navbar() {
           </h5>
         </div>
 
-        {/* Tombol Hamburger Mobile */}
+        {/* Tombol Hamburger untuk Mobile */}
         <div className="md:hidden">
           <button
             className="text-gray-800 focus:outline-none"
