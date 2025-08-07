@@ -9,11 +9,6 @@ export default function Navbar() {
   const [isWebsiteOpen, setIsWebsiteOpen] = useState(false);
   const [isKunjunganOpen, setIsKunjunganOpen] = useState(false);
 
-  // Tambahan untuk dropdown mobile
-  const [mobilePortalOpen, setMobilePortalOpen] = useState(false);
-  const [mobileWebsiteOpen, setMobileWebsiteOpen] = useState(false);
-  const [mobileKunjunganOpen, setMobileKunjunganOpen] = useState(false);
-
   return (
     <nav className="bg-white text-purple-900 shadow-2xl sticky top-0 z-50 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
@@ -93,39 +88,29 @@ export default function Navbar() {
 
             {/* Mobile Portal PPDB */}
             <li className="border-t pt-4">
-              <button onClick={() => setMobilePortalOpen(!mobilePortalOpen)} className="w-full text-left text-[#00215E] hover:text-[#FAA300]">
-                Portal PPDB {mobilePortalOpen ? '▲' : '▼'}
-              </button>
-              {mobilePortalOpen && (
-                <ul className="mt-2 pl-4 space-y-2 text-base">
-                  <li><Link href="/portal-ppdb/link-pendaftaran" onClick={() => setIsOpen(false)} className="block text-[#00215E] hover:text-[#FAA300]">Link Pendaftaran</Link></li>
-                  <li>
-                    <button onClick={() => setMobileWebsiteOpen(!mobileWebsiteOpen)} className="w-full text-left text-[#00215E] hover:text-[#FAA300]">Website {mobileWebsiteOpen ? '▲' : '▼'}</button>
-                    {mobileWebsiteOpen && (
-                      <ul className="ml-4 space-y-1">
-                        <li><Link href="/website/sma" onClick={() => setIsOpen(false)} className="block text-[#00215E] hover:text-[#FAA300]">SMA</Link></li>
-                        <li><Link href="/website/smk" onClick={() => setIsOpen(false)} className="block text-[#00215E] hover:text-[#FAA300]">SMK</Link></li>
-                        <li><Link href="/website/smp" onClick={() => setIsOpen(false)} className="block text-[#00215E] hover:text-[#FAA300]">SMP</Link></li>
-                      </ul>
-                    )}
-                  </li>
-                  <li><Link href="/portal-ppdb/dana-investasi" onClick={() => setIsOpen(false)} className="block text-[#00215E] hover:text-[#FAA300]">Dana Investasi</Link></li>
-                  <li><Link href="/portal-ppdb/informasi-rekening" onClick={() => setIsOpen(false)} className="block text-[#00215E] hover:text-[#FAA300]">Informasi Rekening</Link></li>
-                </ul>
-              )}
+              <span className="block text-[#00215E]">Portal PPDB</span>
+              <ul className="mt-2 pl-4 space-y-2 text-base">
+                <li><Link href="/link-pendaftaran" onClick={() => setIsOpen(false)} className="block text-[#00215E] hover:text-[#FAA300]">Link Pendaftaran</Link></li>
+                <li>
+                  <span className="block text-[#00215E]">Website</span>
+                  <ul className="ml-4 space-y-1">
+                    <li><Link href="/website/sma" onClick={() => setIsOpen(false)} className="block text-[#00215E] hover:text-[#FAA300]">SMA</Link></li>
+                    <li><Link href="/website/smk" onClick={() => setIsOpen(false)} className="block text-[#00215E] hover:text-[#FAA300]">SMK</Link></li>
+                    <li><Link href="/website/smp" onClick={() => setIsOpen(false)} className="block text-[#00215E] hover:text-[#FAA300]">SMP</Link></li>
+                  </ul>
+                </li>
+                <li><Link href="/dana-investasi" onClick={() => setIsOpen(false)} className="block text-[#00215E] hover:text-[#FAA300]">Dana Investasi</Link></li>
+                <li><Link href="/info-rekening" onClick={() => setIsOpen(false)} className="block text-[#00215E] hover:text-[#FAA300]">Informasi Rekening</Link></li>
+              </ul>
             </li>
 
             {/* Mobile Data Kunjungan */}
             <li className="border-t pt-4">
-              <button onClick={() => setMobileKunjunganOpen(!mobileKunjunganOpen)} className="w-full text-left text-[#00215E] hover:text-[#FAA300]">
-                Data Kunjungan {mobileKunjunganOpen ? '▲' : '▼'}
-              </button>
-              {mobileKunjunganOpen && (
-                <ul className="mt-2 pl-4 space-y-2 text-base">
-                  <li><Link href="/kunjungan/gabungan" onClick={() => setIsOpen(false)} className="block text-[#00215E] hover:text-[#FAA300]">Kunjungan Gabungan</Link></li>
-                  <li><Link href="/kunjungan/smk" onClick={() => setIsOpen(false)} className="block text-[#00215E] hover:text-[#FAA300]">Kunjungan SMK</Link></li>
-                </ul>
-              )}
+              <span className="block text-[#00215E]">Data Kunjungan</span>
+              <ul className="mt-2 pl-4 space-y-2 text-base">
+                <li><Link href="/kunjungan/gabungan" onClick={() => setIsOpen(false)} className="block text-[#00215E] hover:text-[#FAA300]">Kunjungan Gabungan</Link></li>
+                <li><Link href="/kunjungan/smk" onClick={() => setIsOpen(false)} className="block text-[#00215E] hover:text-[#FAA300]">Kunjungan SMK</Link></li>
+              </ul>
             </li>
           </ul>
         </div>
