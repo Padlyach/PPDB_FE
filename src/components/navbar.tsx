@@ -47,7 +47,7 @@ export default function Navbar() {
                   )}
                 </li>
                 <li><Link href="/portal-ppdb/dana-investasi" className="block px-4 py-2 hover:bg-[#FAA300]/10 text-[#00215E] hover:text-[#FAA300]">Dana Investasi</Link></li>
-                <li><Link href="/portal-ppdb/informasi-rekening" className="block px-4 py-2 hover:bg-[#FAA300]/10 text-[#00215E] hover:text-[#FAA300]">Informasi Rekening</Link></li>
+                <li><Link href="/info-rekening" className="block px-4 py-2 hover:bg-[#FAA300]/10 text-[#00215E] hover:text-[#FAA300]">Informasi Rekening</Link></li>
               </ul>
             )}
           </li>
