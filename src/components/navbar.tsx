@@ -2,140 +2,94 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaChevronDown } from 'react-icons/fa6';
+import { FaChevronDown } from 'react-icons/fa';
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isPortalOpen, setIsPortalOpen] = useState(false);
-  const [isWebsiteOpen, setIsWebsiteOpen] = useState(false);
-  const [isKunjunganOpen, setIsKunjunganOpen] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobilePortalOpen, setMobilePortalOpen] = useState(false);
-  const [mobileWebsiteOpen, setMobileWebsiteOpen] = useState(false);
-  const [mobileKunjunganOpen, setMobileKunjunganOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState('');
+  const [mobileMenu, setMobileMenu] = useState(false);
+
+  const toggleDropdown = (menu: string) => {
+    setOpenDropdown(openDropdown === menu ? '' : menu);
+  };
 
   return (
-    <header className="bg-white w-full fixed top-0 left-0 shadow z-50">
-      <div className="flex items-center justify-between px-4 py-4 md:px-10">
-        <Link href="/" className="flex items-center gap-2">
-          <Image src="/img/logoPesat.png" alt="Logo" width={50} height={50} />
+    <header className="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+      <nav className="container mx-auto flex items-center justify-between p-4">
+        {/* Logo dan Judul */}
+        <div className="flex items-center gap-4">
+          <Image src="/logo.png" alt="Logo" width={50} height={50} />
           <h5 className="text-lg sm:text-xl md:text-3xl font-black text-center">
             SMK INFORMATIKA PESAT
           </h5>
-        </Link>
+        </div>
 
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center gap-6 text-gray-800 font-semibold text-sm relative">
-          {/* Data Kunjungan */}
-          <div className="relative group">
+        {/* Tombol Hamburger Mobile */}
+        <div className="md:hidden">
+          <button
+            className="text-gray-800 focus:outline-none"
+            onClick={() => setMobileMenu(!mobileMenu)}
+          >
+            ☰
+          </button>
+        </div>
+
+        {/* Menu Desktop */}
+        <div className="hidden md:flex gap-6 items-center">
+          <div className="relative">
             <button
-              className="flex items-center gap-1 hover:text-[#FAA300] transition-all duration-300"
-              onClick={() => setIsKunjunganOpen(!isKunjunganOpen)}
+              onClick={() => toggleDropdown('kunjungan')}
+              className="flex items-center gap-1 text-gray-800 hover:text-blue-600"
             >
-              Data Kunjungan <FaChevronDown className="text-xs mt-1" />
+              Data Kunjungan <FaChevronDown className="text-xs" />
             </button>
-            {isKunjunganOpen && (
-              <div className="absolute top-full left-0 mt-2 bg-white border rounded shadow-md py-2 px-4 z-50 w-56">
-                <Link href="/kunjunganGabungan" className="block py-1 hover:text-[#FAA300]">Kunjungan Gabungan</Link>
-                <Link href="/kunjunganSmk" className="block py-1 hover:text-[#FAA300]">Kunjungan SMK</Link>
+            {openDropdown === 'kunjungan' && (
+              <div className="absolute bg-white shadow-md mt-2 rounded p-2 z-10">
+                <Link href="/kunjunganGabungan" className="block px-4 py-2 hover:bg-gray-100">Kunjungan Gabungan</Link>
+                <Link href="/kunjunganSmk" className="block px-4 py-2 hover:bg-gray-100">Kunjungan SMK</Link>
               </div>
             )}
           </div>
 
-          {/* Portal PPDB */}
-          <div className="relative group">
+          <div className="relative">
             <button
-              className="flex items-center gap-1 hover:text-[#FAA300] transition-all duration-300"
-              onClick={() => setIsPortalOpen(!isPortalOpen)}
+              onClick={() => toggleDropdown('portal')}
+              className="flex items-center gap-1 text-gray-800 hover:text-blue-600"
             >
-              Portal PPDB <FaChevronDown className="text-xs mt-1" />
+              Portal PPDB <FaChevronDown className="text-xs" />
             </button>
-            {isPortalOpen && (
-              <div className="absolute top-full left-0 mt-2 bg-white border rounded shadow-md py-2 px-4 z-50 w-56">
-                <Link href="/linkPendaftaran" className="block py-1 hover:text-[#FAA300]">Link Pendaftaran</Link>
-                <Link href="/danaInvestasi" className="block py-1 hover:text-[#FAA300]">Dana Investasi</Link>
-                <Link href="/pembayaran" className="block py-1 hover:text-[#FAA300]">Pembayaran</Link>
+            {openDropdown === 'portal' && (
+              <div className="absolute bg-white shadow-md mt-2 rounded p-2 z-10">
+                <Link href="/pendaftaran" className="block px-4 py-2 hover:bg-gray-100">Link Pendaftaran</Link>
+                <Link href="/website" className="block px-4 py-2 hover:bg-gray-100">Website</Link>
+                <Link href="/investasi" className="block px-4 py-2 hover:bg-gray-100">Dana Investasi</Link>
+                <Link href="/pembayaran" className="block px-4 py-2 hover:bg-gray-100">Pembayaran</Link>
               </div>
             )}
           </div>
+        </div>
+      </nav>
 
-          {/* Website */}
-          <div className="relative group">
-            <button
-              className="flex items-center gap-1 hover:text-[#FAA300] transition-all duration-300"
-              onClick={() => setIsWebsiteOpen(!isWebsiteOpen)}
-            >
-              Website <FaChevronDown className="text-xs mt-1" />
-            </button>
-            {isWebsiteOpen && (
-              <div className="absolute top-full left-0 mt-2 bg-white border rounded shadow-md py-2 px-4 z-50 w-56">
-                <Link href="/smp" className="block py-1 hover:text-[#FAA300]">Website SMP</Link>
-                <Link href="/sma" className="block py-1 hover:text-[#FAA300]">Website SMA</Link>
-                <Link href="/smk" className="block py-1 hover:text-[#FAA300]">Website SMK</Link>
+      {/* Menu Mobile */}
+      {mobileMenu && (
+        <div className="md:hidden bg-white px-4 pb-4 shadow">
+          <div className="py-2">
+            <details className="mb-2">
+              <summary className="cursor-pointer text-gray-800 font-medium">Data Kunjungan</summary>
+              <div className="pl-4 mt-1">
+                <Link href="/kunjunganGabungan" onClick={() => setMobileMenu(false)} className="block py-1 text-gray-700">Kunjungan Gabungan</Link>
+                <Link href="/kunjunganSmk" onClick={() => setMobileMenu(false)} className="block py-1 text-gray-700">Kunjungan SMK</Link>
               </div>
-            )}
-          </div>
-        </nav>
+            </details>
 
-        {/* Mobile Menu Toggle */}
-        <button className="md:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
-          <Image src="/img/menu.svg" alt="Menu" width={25} height={25} />
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="md:hidden bg-white px-4 pb-6 text-sm text-gray-800 font-medium">
-          <div className="border-t py-4">
-            {/* Data Kunjungan */}
-            <div className="mb-3">
-              <button
-                className="flex items-center gap-2 w-full text-left"
-                onClick={() => setMobileKunjunganOpen(!mobileKunjunganOpen)}
-              >
-                Data Kunjungan <FaChevronDown className="text-xs mt-1" />
-              </button>
-              {mobileKunjunganOpen && (
-                <div className="ml-4 mt-2 space-y-2">
-                  <Link href="/kunjunganGabungan" className="block hover:text-[#FAA300]">Kunjungan Gabungan</Link>
-                  <Link href="/kunjunganSmk" className="block hover:text-[#FAA300]">Kunjungan SMK</Link>
-                </div>
-              )}
-            </div>
-
-            {/* Portal PPDB */}
-            <div className="mb-3">
-              <button
-                className="flex items-center gap-2 w-full text-left"
-                onClick={() => setMobilePortalOpen(!mobilePortalOpen)}
-              >
-                Portal PPDB <FaChevronDown className="text-xs mt-1" />
-              </button>
-              {mobilePortalOpen && (
-                <div className="ml-4 mt-2 space-y-2">
-                  <Link href="/linkPendaftaran" className="block hover:text-[#FAA300]">Link Pendaftaran</Link>
-                  <Link href="/danaInvestasi" className="block hover:text-[#FAA300]">Dana Investasi</Link>
-                  <Link href="/pembayaran" className="block hover:text-[#FAA300]">Pembayaran</Link>
-                </div>
-              )}
-            </div>
-
-            {/* Website */}
-            <div className="mb-3">
-              <button
-                className="flex items-center gap-2 w-full text-left"
-                onClick={() => setMobileWebsiteOpen(!mobileWebsiteOpen)}
-              >
-                Website <FaChevronDown className="text-xs mt-1" />
-              </button>
-              {mobileWebsiteOpen && (
-                <div className="ml-4 mt-2 space-y-2">
-                  <Link href="/smp" className="block hover:text-[#FAA300]">Website SMP</Link>
-                  <Link href="/sma" className="block hover:text-[#FAA300]">Website SMA</Link>
-                  <Link href="/smk" className="block hover:text-[#FAA300]">Website SMK</Link>
-                </div>
-              )}
-            </div>
+            <details>
+              <summary className="cursor-pointer text-gray-800 font-medium">Portal PPDB</summary>
+              <div className="pl-4 mt-1">
+                <Link href="/pendaftaran" onClick={() => setMobileMenu(false)} className="block py-1 text-gray-700">Link Pendaftaran</Link>
+                <Link href="/website" onClick={() => setMobileMenu(false)} className="block py-1 text-gray-700">Website</Link>
+                <Link href="/investasi" onClick={() => setMobileMenu(false)} className="block py-1 text-gray-700">Dana Investasi</Link>
+                <Link href="/pembayaran" onClick={() => setMobileMenu(false)} className="block py-1 text-gray-700">Pembayaran</Link>
+              </div>
+            </details>
           </div>
         </div>
       )}
