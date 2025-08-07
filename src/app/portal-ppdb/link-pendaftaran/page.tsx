@@ -25,7 +25,7 @@ Dengan kurikulum inovatif, tenaga pendidik profesional, dan fasilitas modern, Pe
   <div className="md:w-1/2">
     <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500">
       <img 
-        src="/ppdb-pesat.webp" 
+        src="/sekolah.webp" 
         alt="Pendaftaran SMP SMA SMK Pesat"
         className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-500"
       />
@@ -40,50 +40,53 @@ Dengan kurikulum inovatif, tenaga pendidik profesional, dan fasilitas modern, Pe
         </div>
 
         {/* Website Links */}
-        <div className="mt-12 grid sm:grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Website SMK */}
-          <div className="bg-white rounded-2xl p-6 border-2 border-[#00215E] hover:shadow-[5px_5px_20px_#00215E] transition-all duration-500 transform hover:-translate-y-2">
-            <h3 className="text-xl font-bold text-[#00215E] mb-4 flex items-center">
-              <svg className="w-8 h-8 mr-3 text-[#00215E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
-              </svg>
-              Website SMK
-            </h3>
-            <Link href="https://smkpesat.sch.id/" className="inline-block px-4 py-2 bg-[#FAA300] text-white rounded-full text-sm font-bold shadow-lg hover:shadow-[0_0_10px_#FAA300] transition-all duration-300">
-              Kunjungi Website SMK
-            </Link>
-          </div>
+        <div className="flex items-center justify-center bg-white px-4">
+  <div className="mt-12 grid sm:grid-cols-1 md:grid-cols-3 gap-6 text-center">
+    {/* Website SMK */}
+    <div className="bg-white rounded-2xl p-6 border-2 border-[#00215E] hover:shadow-[5px_5px_20px_#00215E] transition-all duration-500 transform hover:-translate-y-2">
+      <h3 className="text-xl font-bold text-[#00215E] mb-4 flex items-center justify-center">
+        Website SMK
+      </h3>
+      <Link
+        href="https://smkpesat.sch.id/"
+        className="inline-block px-4 py-2 bg-[#FAA300] text-white rounded-full text-sm font-bold shadow-lg hover:shadow-[0_0_10px_#FAA300] transition-all duration-300"
+      >
+        Kunjungi Website SMK
+      </Link>
+    </div>
 
-          {/* Website SMA */}
-          <div className="bg-white rounded-2xl p-6 border-2 border-[#00215E] hover:shadow-[5px_5px_20px_#00215E] transition-all duration-500 transform hover:-translate-y-2">
-            <h3 className="text-xl font-bold text-[#00215E] mb-4 flex items-center">
-              <svg className="w-8 h-8 mr-3 text-[#00215E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
-              </svg>
-              Website SMA
-            </h3>
-            <Link href="/website/sma" className="inline-block px-4 py-2 bg-[#FAA300] text-white rounded-full text-sm font-bold shadow-lg hover:shadow-[0_0_10px_#FAA300] transition-all duration-300">
-              Kunjungi Website SMA
-            </Link>
-          </div>
+    {/* Website SMA */}
+    <div className="bg-white rounded-2xl p-6 border-2 border-[#00215E] hover:shadow-[5px_5px_20px_#00215E] transition-all duration-500 transform hover:-translate-y-2">
+      <h3 className="text-xl font-bold text-[#00215E] mb-4 flex items-center justify-center">
+        Website SMA
+      </h3>
+      <Link
+        href="https://smapesat.sch.id/"
+        className="inline-block px-4 py-2 bg-[#FAA300] text-white rounded-full text-sm font-bold shadow-lg hover:shadow-[0_0_10px_#FAA300] transition-all duration-300"
+      >
+        Kunjungi Website SMA
+      </Link>
+    </div>
 
-          {/* Website SMP */}
-          <div className="bg-white rounded-2xl p-6 border-2 border-[#00215E] hover:shadow-[5px_5px_20px_#00215E] transition-all duration-500 transform hover:-translate-y-2">
-            <h3 className="text-xl font-bold text-[#00215E] mb-4 flex items-center">
-              <svg className="w-8 h-8 mr-3 text-[#00215E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
-              </svg>
-              Website SMP
-            </h3>
-            <Link href="/website/smp" className="inline-block px-4 py-2 bg-[#FAA300] text-white rounded-full text-sm font-bold shadow-lg hover:shadow-[0_0_10px_#FAA300] transition-all duration-300">
-              Kunjungi Website SMP
-            </Link>
-          </div>
-        </div>
+    {/* Website SMP */}
+    <div className="bg-white rounded-2xl p-6 border-2 border-[#00215E] hover:shadow-[5px_5px_20px_#00215E] transition-all duration-500 transform hover:-translate-y-2">
+      <h3 className="text-xl font-bold text-[#00215E] mb-4 flex items-center justify-center">
+        Website SMP
+      </h3>
+      <Link
+        href="https://smppesat.sch.id/"
+        className="inline-block px-4 py-2 bg-[#FAA300] text-white rounded-full text-sm font-bold shadow-lg hover:shadow-[0_0_10px_#FAA300] transition-all duration-300"
+      >
+        Kunjungi Website SMP
+      </Link>
+    </div>
+  </div>
+</div>
+
       </div>
 
-       <section className="pt-20 px-6 bg-gray-50 ">
-        <div className="max-w-6xl mx-auto">
+       <section className="pt-20 px-6 bg-white ">
+        <div className="max-w-6xl mx-auto bg-white">
          <h3 className="text-3xl md:text-4xl font-bold text-center text-[#00215E] mb-12">Hubungi Kami</h3>    
           <div className="grid md:grid-cols-2 gap-8">
             <div className="flex flex-col space-y-4">

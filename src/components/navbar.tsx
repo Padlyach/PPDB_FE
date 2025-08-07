@@ -40,27 +40,14 @@ export default function Navbar() {
                   <button onClick={() => setIsWebsiteOpen(!isWebsiteOpen)} className="w-full text-left px-4 py-2 hover:bg-[#FAA300]/10 text-[#00215E] hover:text-[#FAA300]">Website ▼</button>
                   {isWebsiteOpen && (
                     <ul className="bg-white ml-2 shadow-inner rounded-b-md">
-                      <li><Link href="/website/sma" className="block px-4 py-2 hover:bg-[#FAA300]/10 text-[#00215E] hover:text-[#FAA300]">SMA</Link></li>
-                      <li><Link href="/website/smk" className="block px-4 py-2 hover:bg-[#FAA300]/10 text-[#00215E] hover:text-[#FAA300]">SMK</Link></li>
-                      <li><Link href="/website/smp" className="block px-4 py-2 hover:bg-[#FAA300]/10 text-[#00215E] hover:text-[#FAA300]">SMP</Link></li>
+                      <li><Link href="https://smapesat.sch.id/" className="block px-4 py-2 hover:bg-[#FAA300]/10 text-[#00215E] hover:text-[#FAA300]">SMA</Link></li>
+                      <li><Link href="https://smkpesat.sch.id/" className="block px-4 py-2 hover:bg-[#FAA300]/10 text-[#00215E] hover:text-[#FAA300]">SMK</Link></li>
+                      <li><Link href="https://smppesat.sch.id/" className="block px-4 py-2 hover:bg-[#FAA300]/10 text-[#00215E] hover:text-[#FAA300]">SMP</Link></li>
                     </ul>
                   )}
                 </li>
                 <li><Link href="/portal-ppdb/dana-investasi" className="block px-4 py-2 hover:bg-[#FAA300]/10 text-[#00215E] hover:text-[#FAA300]">Dana Investasi</Link></li>
-                <li><Link href="/info-rekening" className="block px-4 py-2 hover:bg-[#FAA300]/10 text-[#00215E] hover:text-[#FAA300]">Informasi Rekening</Link></li>
-              </ul>
-            )}
-          </li>
-
-          {/* Dropdown Data Kunjungan */}
-          <li className="relative">
-            <button onClick={() => setIsKunjunganOpen(!isKunjunganOpen)} className="relative py-2 text-[#00215E] hover:text-[#FAA300] transition-colors duration-300 after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#FFD700] after:left-0 after:bottom-0 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">
-              DATA KUNJUNGAN 
-            </button>
-            {isKunjunganOpen && (
-              <ul className="absolute bg-white shadow-xl mt-2 rounded-lg overflow-hidden z-50 text-sm text-left">
-                <li><Link href="/kunjungan/gabungan" className="block px-4 py-2 hover:bg-[#FAA300]/10 text-[#00215E] hover:text-[#FAA300]">Kunjungan Gabungan</Link></li>
-                <li><Link href="/kunjungan/smk" className="block px-4 py-2 hover:bg-[#FAA300]/10 text-[#00215E] hover:text-[#FAA300]">Kunjungan SMK</Link></li>
+                <li><Link href="/portal-ppdb/informasi-rekening" className="block px-4 py-2 hover:bg-[#FAA300]/10 text-[#00215E] hover:text-[#FAA300]">Informasi Rekening</Link></li>
               </ul>
             )}
           </li>
