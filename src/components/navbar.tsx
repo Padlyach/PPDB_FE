@@ -16,7 +16,7 @@ export default function Navbar() {
         <div className="flex items-center space-x-3 group cursor-pointer">
           <Image src="/smk.png" alt="Logo Sekolah" width={60} height={60} className="transform transition-transform duration-300 group-hover:scale-110" />
           <h5 className="text-3xl font-black text-center">
-            <span className="text-[#00215E]">PPDB</span> <span className="text-[#FAA300]">SMK INFORMATIKA PESAT</span>
+            <span className="text-[#00215E]">PPDB</span> <span className="text-[#FAA300]">SMK PESAT</span>
           </h5>
         </div>
 

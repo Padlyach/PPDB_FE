@@ -1,5 +1,5 @@
 import Link from 'next/link';
-
+import Image from 'next/image';
 export default function DanaInvestasi() {
   return (
     <main className="min-h-screen py-16 px-4 bg-gradient-to-b from-white to-[#f9f9f9]">
@@ -61,6 +61,21 @@ export default function DanaInvestasi() {
             </div>
           ))}
         </div>
+        {/* WhatsApp Chat Button */}
+              <a
+                href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20bertanya%20tentang%20PPDB"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="fixed bottom-6 right-6 z-50 bg-white p-3 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
+              >
+                <Image
+                  src="/whatsapp-logo.png"
+                  alt="Chat via WhatsApp"
+                  width={60}
+                  height={60}
+                  className="rounded-full"
+                />
+              </a>
       </div>
     </main>
   );
