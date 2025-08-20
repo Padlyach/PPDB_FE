@@ -13,38 +13,36 @@ export default function Home() {
           <div className="max-w-2xl">
             {/* Badge */}
             <p className="text-amber-600 font-semibold mb-4">
-              SISTEM INFORMASI PENDAFTARAN SISWA BARU (PPDB) ONLINE
+              TELAH DIPERCAYA OLEH 2000+ ORANG TUA & SISWA
             </p>
 
             {/* Title */}
             <h1 className="text-4xl lg:text-5xl font-extrabold text-slate-900 leading-snug mb-6">
-              Mudah, Cepat, dan Transparan <br />{" "}
+              Kompetensi Teruji <br /> dengan{" "}
               <span className="relative inline-block">
-                PPDB Online
+                Portofolio
                 <span className="absolute bottom-0 left-0 w-full h-1 bg-amber-400"></span>
               </span>{" "}
-              untuk Calon Siswa Baru
+              Level Industri
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg text-slate-800 font-medium mb-6">
-              Sistem Informasi <span className="font-bold">PPDB</span> membantu{" "}
-              <span className="font-bold">orang tua</span> dan{" "}
-              <span className="font-bold">calon siswa</span> melakukan proses
-              pendaftaran secara <span className="font-bold">online</span>,
-              praktis, dan dapat diakses di mana saja.
+              Sekolah Vokasi Informatika <span className="font-bold">Terbaik</span>{" "}
+              dengan <span className="font-bold">3 Jurusan</span> di Bidang IT :
             </p>
 
-            {/* List Fitur */}
+            {/* List Jurusan */}
             <ul className="space-y-2 text-slate-700 mb-8">
               <li className="flex items-center gap-2">
-                <span className="text-amber-500">✔</span> Formulir pendaftaran online
+                <span className="text-amber-500">✔</span> Teknik Komputer dan
+                Jaringan
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-amber-500">✔</span> Informasi program dan jurusan
+                <span className="text-amber-500">✔</span> Desain Komunikasi Visual
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-amber-500">✔</span> Status pendaftaran transparan
+                <span className="text-amber-500">✔</span> Rekayasa Perangkat Lunak
               </li>
             </ul>
 
