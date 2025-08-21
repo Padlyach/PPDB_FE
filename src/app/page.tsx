@@ -48,24 +48,19 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/program">
-                <button className="px-6 py-3 rounded-lg border border-slate-800 text-slate-900 font-semibold hover:bg-slate-100 transition">
-                  Lihat Program Sekolah
-                </button>
-              </Link>
-              <Link href="/daftar">
-                <button className="px-6 py-3 rounded-lg bg-amber-500 text-white font-semibold hover:bg-amber-600 transition flex items-center gap-2">
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 5v14m7-7H5" />
-                  </svg>
-                  Daftar Sekarang
-                </button>
-              </Link>
-            </div>
+  <Link href="/program">
+    <button className="px-6 py-3 rounded-xl border border-slate-800 text-slate-900 font-semibold hover:bg-slate-100 transition-all duration-300 shadow-sm hover:shadow-md">
+      Lihat Program Sekolah
+    </button>
+  </Link>
+
+  <Link href="/daftar">
+    <button className="px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-600 transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2">
+      Daftar Sekarang
+    </button>
+  </Link>
+</div>
+
           </div>
 
           {/* Right Content - Foto Siswa */}
