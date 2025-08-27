@@ -23,12 +23,12 @@ export default function Navbar() {
 
   // Close dropdowns when clicking outside
   useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (!event.target.closest('.dropdown-container')) {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (!(event.target as HTMLElement).closest('.dropdown-container')) {
         setIsPortalOpen(false);
         setIsWebsiteOpen(false);
       }
-      if (isOpen && !event.target.closest('nav')) {
+      if (isOpen && !(event.target as HTMLElement).closest('nav')) {
         setIsOpen(false);
       }
     };
