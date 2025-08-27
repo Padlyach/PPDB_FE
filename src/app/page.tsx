@@ -54,7 +54,7 @@ export default function Home() {
   <Link href="/program">
     <button className="relative group px-6 py-3 rounded-xl border-2 border-slate-900 text-slate-900 font-semibold shadow-md w-full sm:w-auto overflow-hidden transition-all duration-300">
       <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-        🎓 Lihat Program Sekolah
+        🎓 Alur Pendaftaran
       </span>
       <span className="absolute inset-0 bg-slate-900 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
     </button>
@@ -63,7 +63,7 @@ export default function Home() {
   {/* Button Daftar */}
   <Link href="/daftar">
     <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold hover:from-amber-600 hover:to-orange-600 active:scale-95 transition duration-300 flex items-center justify-center gap-2 shadow-lg w-full sm:w-auto">
-      🚀 Daftar Sekarang
+      🚀 Syarat Pendaftaran
     </button>
   </Link>
 </div>
