@@ -7,6 +7,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isPortalOpen, setIsPortalOpen] = useState(false);
   const [isWebsiteOpen, setIsWebsiteOpen] = useState(false);
+  const [isMobileWebsiteOpen, setIsMobileWebsiteOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   // Handle scroll effect
@@ -21,12 +22,12 @@ export default function Navbar() {
 
   // Close dropdowns when clicking outside
   useEffect(() => {
-    const handleOutsideClick = (event: any) => {
-      if (!event.target.closest('.dropdown-container')) {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (!(event.target as HTMLElement).closest('.dropdown-container')) {
         setIsPortalOpen(false);
         setIsWebsiteOpen(false);
       }
-      if (isOpen && !event.target.closest('nav')) {
+      if (isOpen && !(event.target as HTMLElement).closest('nav')) {
         setIsOpen(false);
       }
     };
@@ -150,7 +151,16 @@ export default function Navbar() {
                         <span>Link Pendaftaran</span>
                       </span>
                     </Link>
-
+                    <Link
+                      href="/portal-ppdb/informasi-rekening"
+                      className="group flex items-center px-4 py-4 text-blue-800 hover:text-white rounded-2xl transition-all duration-300 relative overflow-hidden"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-2xl"></div>
+                      <span className="relative flex items-center space-x-3 font-semibold">
+                        <span className="text-2xl">🏦</span>
+                        <span>Informasi Rekening</span>
+                      </span>
+                    </Link>
                     {/* Website Dropdown */}
                     <div className="relative">
                       <button
@@ -178,9 +188,27 @@ export default function Navbar() {
                           />
                         </svg>
                       </button>
-
+                   
+                    
                       {isWebsiteOpen && (
                         <div className="mt-2 ml-4 space-y-1 animate-in slide-in-from-top-1 duration-200">
+                          <Link
+                            href="https://smppesat.sch.id/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group flex items-center px-4 py-3 text-blue-700 hover:text-white rounded-xl transition-all duration-300 relative overflow-hidden"
+                          >
+                            <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl"></div>
+                            <span className="relative flex items-center space-x-3 font-medium">
+                              <span className="text-xl">📚</span>
+                              <div>
+                                <div className="font-semibold">SMP PESAT</div>
+                                <div className="text-xs opacity-70">
+                                  Sekolah Menengah Pertama
+                                </div>
+                              </div>
+                            </span>
+                          </Link>
                           <Link
                             href="https://smapesat.sch.id/"
                             target="_blank"
@@ -217,48 +245,10 @@ export default function Navbar() {
                             </span>
                           </Link>
 
-                          <Link
-                            href="https://smppesat.sch.id/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group flex items-center px-4 py-3 text-blue-700 hover:text-white rounded-xl transition-all duration-300 relative overflow-hidden"
-                          >
-                            <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl"></div>
-                            <span className="relative flex items-center space-x-3 font-medium">
-                              <span className="text-xl">📚</span>
-                              <div>
-                                <div className="font-semibold">SMP PESAT</div>
-                                <div className="text-xs opacity-70">
-                                  Sekolah Menengah Pertama
-                                </div>
-                              </div>
-                            </span>
-                          </Link>
                         </div>
                       )}
                     </div>
-
-                    <Link
-                      href="/portal-ppdb/dana-investasi"
-                      className="group flex items-center px-4 py-4 text-blue-800 hover:text-white rounded-2xl transition-all duration-300 relative overflow-hidden"
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-2xl"></div>
-                      <span className="relative flex items-center space-x-3 font-semibold">
-                        <span className="text-2xl">💰</span>
-                        <span>Dana Investasi</span>
-                      </span>
-                    </Link>
-
-                    <Link
-                      href="/portal-ppdb/informasi-rekening"
-                      className="group flex items-center px-4 py-4 text-blue-800 hover:text-white rounded-2xl transition-all duration-300 relative overflow-hidden"
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-2xl"></div>
-                      <span className="relative flex items-center space-x-3 font-semibold">
-                        <span className="text-2xl">🏦</span>
-                        <span>Informasi Rekening</span>
-                      </span>
-                    </Link>
+                    
                   </div>
                 </div>
               )}
@@ -266,141 +256,159 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-3 rounded-lg hover:bg-[#0B4C95]/20 transition-all duration-300 hover:shadow-md"
+          <div className="lg:hidden">
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="p-3 rounded-2xl hover:bg-white/10 transition-all duration-300 relative group backdrop-blur-sm"
               aria-label="Toggle Menu"
             >
-              <svg
-                className="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2.5}
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d={
-                    isOpen
-                      ? 'M6 18L18 6M6 6l12 12'
-                      : 'M4 6h16M4 12h16M4 18h16'
-                  }
-                />
-              </svg>
+              <div className="w-6 h-6 relative">
+                <span className={`absolute h-0.5 w-6 bg-white transition-all duration-500 ${
+                  isOpen ? 'rotate-45 top-3' : 'top-1'
+                }`}></span>
+                <span className={`absolute h-0.5 w-6 bg-yellow-300 transition-all duration-500 top-3 ${
+                  isOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
+                }`}></span>
+                <span className={`absolute h-0.5 w-6 bg-white transition-all duration-500 ${
+                  isOpen ? '-rotate-45 top-3' : 'top-5'
+                }`}></span>
+              </div>
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden px-8 pb-6 bg-white backdrop-blur-lg shadow-inner">
-            <ul className="space-y-4 font-extrabold text-lg">
-              <li>
-                <Link
-                  href="/"
-                  className="block py-4 px-6 rounded-xl text-[#00215E] hover:bg-[#0B4C95]/20 hover:text-[#FAA300] transition-all duration-300 transform hover:translate-x-2 hover:shadow-lg"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Beranda
-                </Link>
-              </li>
+      {/* Mobile Menu Overlay */}
+      {isOpen && (
+        <div className="lg:hidden fixed inset-0 top-16 bg-black/30 backdrop-blur-md z-40">
+          <div className="bg-gradient-to-br from-blue-600/95 via-blue-700/95 to-blue-800/95 backdrop-blur-xl shadow-2xl border-t border-blue-300/30 max-h-screen overflow-y-auto">
+            <div className="px-6 py-8 space-y-4">
+              <Link 
+                href="/" 
+                className="group flex items-center px-6 py-4 rounded-2xl text-white hover:text-blue-100 transition-all duration-500 font-bold relative overflow-hidden"
+                onClick={() => setIsOpen(false)}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
+                <span className="relative flex items-center space-x-4">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                  </svg>
+                  <span>Beranda</span>
+                </span>
+              </Link>
 
               {/* Mobile Portal PPDB */}
-              <li className="border-t pt-4">
-                <span className="block text-[#00215E]">Portal PPDB</span>
-                <ul className="mt-2 pl-4 space-y-2 text-base">
-                  <li>
-                    <Link
-                      href="/link-pendaftaran"
-                      onClick={() => setIsOpen(false)}
-                      className="block text-[#00215E] hover:text-[#FAA300]"
+              <div className="space-y-3">
+                <div className="px-6 py-3 text-yellow-200 font-black text-lg uppercase tracking-wider border-b-2 border-yellow-300/50">
+                  🏢 Portal PPDB
+                </div>
+                
+                <Link 
+                  href="/portal-ppdb/link-pendaftaran" 
+                  className="group flex items-center px-6 py-4 rounded-2xl text-white hover:text-blue-100 transition-all duration-500 font-semibold relative overflow-hidden"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-500/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
+                  <span className="relative flex items-center space-x-4">
+                    <span className="text-2xl">📝</span>
+                    <span>Link Pendaftaran</span>
+                  </span>
+                </Link>
+                <Link 
+                  href="/portal-ppdb/informasi-rekening" 
+                  className="group flex items-center px-6 py-4 rounded-2xl text-white hover:text-blue-100 transition-all duration-500 font-semibold relative overflow-hidden"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-purple-500/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
+                  <span className="relative flex items-center space-x-4">
+                    <span className="text-2xl">🏦</span>
+                    <span>Informasi Rekening</span>
+                  </span>
+                </Link>
+                {/* Mobile Website Dropdown */}
+                <div className="space-y-2">
+                  <button 
+                    onClick={() => setIsMobileWebsiteOpen(!isMobileWebsiteOpen)}
+                    className="flex items-center justify-between w-full px-6 py-4 text-white hover:text-yellow-100 font-semibold transition-all duration-300"
+                  >
+                    <span className="flex items-center space-x-4">
+                      <span className="text-2xl">🌐</span>
+                      <span>Website Sekolah</span>
+                    </span>
+                    <svg 
+                      className={`w-5 h-5 transition-transform duration-500 ${isMobileWebsiteOpen ? 'rotate-180' : ''}`} 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
                     >
-                      Link Pendaftaran
-                    </Link>
-                  </li>
-                  <li>
-                    <span className="block text-[#00215E]">Website</span>
-                    <ul className="ml-4 space-y-1">
-                      <li>
-                        <Link
-                          href="/website/sma"
-                          onClick={() => setIsOpen(false)}
-                          className="block text-[#00215E] hover:text-[#FAA300]"
-                        >
-                          SMA
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/website/smk"
-                          onClick={() => setIsOpen(false)}
-                          className="block text-[#00215E] hover:text-[#FAA300]"
-                        >
-                          SMK
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/website/smp"
-                          onClick={() => setIsOpen(false)}
-                          className="block text-[#00215E] hover:text-[#FAA300]"
-                        >
-                          SMP
-                        </Link>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <Link
-                      href="/dana-investasi"
-                      onClick={() => setIsOpen(false)}
-                      className="block text-[#00215E] hover:text-[#FAA300]"
-                    >
-                      Dana Investasi
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/info-rekening"
-                      onClick={() => setIsOpen(false)}
-                      className="block text-[#00215E] hover:text-[#FAA300]"
-                    >
-                      Informasi Rekening
-                    </Link>
-                  </li>
-                </ul>
-              </li>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  
+                  {isMobileWebsiteOpen && (
+                    <div className="space-y-2 pl-8 animate-in slide-in-from-top-2 duration-300">
+                      <Link 
+                        href="https://smppesat.sch.id/" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center px-6 py-3 rounded-2xl text-white hover:text-blue-100 transition-all duration-500 font-medium relative overflow-hidden"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-r from-teal-400/20 to-teal-500/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
+                        <span className="relative flex items-center space-x-4">
+                          <span className="text-xl">📚</span>
+                          <div>
+                            <div className="font-semibold">SMP PESAT</div>
+                            <div className="text-sm opacity-70">Sekolah Menengah Pertama</div>
+                          </div>
+                        </span>
+                      </Link>
 
-              {/* Mobile Data Kunjungan */}
-              <li className="border-t pt-4">
-                <span className="block text-[#00215E]">Data Kunjungan</span>
-                <ul className="mt-2 pl-4 space-y-2 text-base">
-                  <li>
-                    <Link
-                      href="/kunjungan/gabungan"
-                      onClick={() => setIsOpen(false)}
-                      className="block text-[#00215E] hover:text-[#FAA300]"
-                    >
-                      Kunjungan Gabungan
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/kunjungan/smk"
-                      onClick={() => setIsOpen(false)}
-                      className="block text-[#00215E] hover:text-[#FAA300]"
-                    >
-                      Kunjungan SMK
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+                      <Link 
+                        href="https://smapesat.sch.id/" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center px-6 py-3 rounded-2xl text-white hover:text-blue-100 transition-all duration-500 font-medium relative overflow-hidden"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-r from-red-400/20 to-red-500/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
+                        <span className="relative flex items-center space-x-4">
+                          <span className="text-xl">🎓</span>
+                          <div>
+                            <div className="font-semibold">SMA PESAT</div>
+                            <div className="text-sm opacity-70">Sekolah Menengah Atas</div>
+                          </div>
+                        </span>
+                      </Link>
+                      
+                      <Link 
+                        href="https://smkpesat.sch.id/" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center px-6 py-3 rounded-2xl text-white hover:text-blue-100 transition-all duration-500 font-medium relative overflow-hidden"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-r from-orange-400/20 to-orange-500/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
+                        <span className="relative flex items-center space-x-4">
+                          <span className="text-xl">🔧</span>
+                          <div>
+                            <div className="font-semibold">SMK PESAT</div>
+                            <div className="text-sm opacity-70">Sekolah Menengah Kejuruan</div>
+                          </div>
+                        </span>
+                      </Link>
+                      
+                      
+                    </div>
+                  )}
+                </div>
+                
+                
+              </div>
+            </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </nav>
   );
 }

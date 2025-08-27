@@ -13,55 +13,63 @@ export default function Home() {
           <div className="max-w-2xl">
             {/* Badge */}
             <p className="text-amber-600 font-semibold mb-4">
-              TELAH DIPERCAYA OLEH 2000+ ORANG TUA & SISWA
+              SISTEM INFORMASI PENDAFTARAN SISWA BARU (PPDB) ONLINE
             </p>
 
             {/* Title */}
             <h1 className="text-4xl lg:text-5xl font-extrabold text-slate-900 leading-snug mb-6">
-              Kompetensi Teruji <br /> dengan{" "}
+              Mudah, Cepat, dan Transparan <br />{" "}
               <span className="relative inline-block">
-                Portofolio
+                PPDB Online
                 <span className="absolute bottom-0 left-0 w-full h-1 bg-amber-400"></span>
               </span>{" "}
-              Level Industri
+              untuk Calon Siswa Baru
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg text-slate-800 font-medium mb-6">
-              Sekolah Vokasi Informatika <span className="font-bold">Terbaik</span>{" "}
-              dengan <span className="font-bold">3 Jurusan</span> di Bidang IT :
+              Sistem Informasi <span className="font-bold">PPDB</span> membantu{" "}
+              <span className="font-bold">orang tua</span> dan{" "}
+              <span className="font-bold">calon siswa</span> melakukan proses
+              pendaftaran secara <span className="font-bold">online</span>,
+              praktis, dan dapat diakses di mana saja.
             </p>
 
-            {/* List Jurusan */}
+            {/* List Fitur */}
             <ul className="space-y-2 text-slate-700 mb-8">
               <li className="flex items-center gap-2">
-                <span className="text-amber-500">✔</span> Teknik Komputer dan
-                Jaringan
+                <span className="text-amber-500">✔</span> Formulir pendaftaran online
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-amber-500">✔</span> Desain Komunikasi Visual
+                <span className="text-amber-500">✔</span> Informasi program dan jurusan
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-amber-500">✔</span> Rekayasa Perangkat Lunak
+                <span className="text-amber-500">✔</span> Status pendaftaran transparan
               </li>
             </ul>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+           {/* CTA Buttons */}
+<div className="flex flex-col sm:flex-row gap-4">
+  {/* Button Program */}
   <Link href="/program">
-    <button className="px-6 py-3 rounded-xl border border-slate-800 text-slate-900 font-semibold hover:bg-slate-100 transition-all duration-300 shadow-sm hover:shadow-md">
-      Lihat Program Sekolah
+    <button className="relative group px-6 py-3 rounded-xl border-2 border-slate-900 text-slate-900 font-semibold shadow-md w-full sm:w-auto overflow-hidden transition-all duration-300">
+      <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+        🎓 Alur Pendaftaran
+      </span>
+      <span className="absolute inset-0 bg-slate-900 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
     </button>
   </Link>
 
+  {/* Button Daftar */}
   <Link href="/daftar">
-    <button className="px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-600 transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2">
-      Daftar Sekarang
+    <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold hover:from-amber-600 hover:to-orange-600 active:scale-95 transition duration-300 flex items-center justify-center gap-2 shadow-lg w-full sm:w-auto">
+      🚀 Syarat Pendaftaran
     </button>
   </Link>
 </div>
 
-          </div>
+
+  </div>
 
           {/* Right Content - Foto Siswa */}
           <div className="relative max-w-xl w-full">
@@ -75,32 +83,6 @@ export default function Home() {
                 priority
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Partner Section */}
-      <section className="py-12 border-t border-slate-200">
-        <div className="container mx-auto px-6 lg:px-20">
-          <div className="text-center mb-8">
-            <p className="text-slate-800 font-semibold">
-              Perusahaan tempat siswa magang dan alumni kami bekerja
-            </p>
-          </div>
-
-          <div className="flex flex-wrap justify-center items-center gap-10">
-            <Image
-              src="/logo-telkomsat.png"
-              alt="Telkomsat"
-              width={150}
-              height={80}
-            />
-            <Image src="/logo-maxplus.png" alt="Max+" width={120} height={60} />
-            <Image src="/logo-orva.png" alt="Orva Motion" width={120} height={60} />
-            <Image src="/logo-asnet.png" alt="Asnet" width={120} height={60} />
-            <p className="text-slate-600 font-medium">
-              dan 40+ Perusahaan lainnya
-            </p>
           </div>
         </div>
       </section>
