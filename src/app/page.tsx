@@ -1,9 +1,19 @@
 "use client";
 
-import Link from "next/link";
+import { useState } from "react";
 import Image from "next/image";
 
 export default function Home() {
+
+  const [showModal, setShowModal] = useState(false);
+
+  const handleRequirementsClick = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
   return (
     <div className="bg-white min-h-screen flex flex-col justify-center">
       {/* Hero Section */}
@@ -48,29 +58,14 @@ export default function Home() {
               </li>
             </ul>
 
-           {/* CTA Buttons */}
-<div className="flex flex-col sm:flex-row gap-4">
-  {/* Button Program */}
-  <Link href="/program">
-    <button className="relative group px-6 py-3 rounded-xl border-2 border-slate-900 text-slate-900 font-semibold shadow-md w-full sm:w-auto overflow-hidden transition-all duration-300">
-      <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-        🎓 Alur Pendaftaran
-      </span>
-      <span className="absolute inset-0 bg-slate-900 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
-    </button>
-  </Link>
-
-  {/* Button Daftar */}
-  <Link href="/daftar">
-    <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold hover:from-amber-600 hover:to-orange-600 active:scale-95 transition duration-300 flex items-center justify-center gap-2 shadow-lg w-full sm:w-auto">
-      🚀 Syarat Pendaftaran
-    </button>
-  </Link>
-</div>
-
-
-  </div>
-
+            {/* Persyaratan Button */}
+            <button
+              onClick={handleRequirementsClick}
+              className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-colors duration-200 mb-6"
+            >
+              Lihat Persyaratan Pendaftaran
+            </button>
+          </div>
           {/* Right Content - Foto Siswa */}
           <div className="relative max-w-xl w-full">
             <div className="relative overflow-hidden">
@@ -86,6 +81,63 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      {/* Modal Overlay */}
+      {showModal && (
+        <div className="fixed inset-0 bg-white/80 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in duration-300">
+            {/* Modal Header */}
+            <div className="bg-gradient-to-r from-amber-500 to-amber-600 px-8 py-6 rounded-t-2xl">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <span className="text-3xl">📋</span>
+                  <h2 className="text-2xl font-bold text-white">
+                    Persyaratan Pendaftaran
+                  </h2>
+                </div>
+                <button
+                  onClick={closeModal}
+                  className="text-white hover:text-amber-100 transition-colors duration-200 text-2xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:bg-opacity-20"
+                >
+                  ×
+                </button>
+              </div>
+              <p className="text-amber-100 mt-2 font-medium">
+                Peserta Didik Baru Sekolah Pesat
+              </p>
+            </div>
+            {/* Modal Content */}
+            <div className="px-8 py-6">
+              <div className="space-y-4">
+                {[
+                  { icon: "🎓", text: "Fotocopy Ijazah" },
+                  { icon: "📄", text: "Fotocopy Akte Lahir" },
+                  { icon: "👨‍👩‍👧‍👦", text: "Fotocopy Kartu Keluarga" },
+                  { icon: "🆔", text: "Nomor Induk Siswa Nasional (NISN)" },
+                  { icon: "📸", text: "Pas Foto 3x4 2 lembar" }
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200 hover:bg-slate-100 transition-colors duration-200"
+                  >
+                    <div className="flex-shrink-0 w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
+                      <span className="text-lg">{item.icon}</span>
+                    </div>
+                    <div className="flex-1">
+                      <span className="text-lg font-semibold text-slate-900 flex items-center gap-2">
+                        {index + 1}. {item.text}
+                      </span>
+                    </div>
+                    <div className="text-amber-500 text-xl">
+                      ✔
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
