@@ -76,7 +76,7 @@ export default function Navbar() {
     href="/"
     className="group px-6 py-3 rounded-2xl text-black hover:text-white font-bold transition-all duration-500 relative overflow-hidden flex items-center space-x-2"
   >
-    <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
+    <div className="absolute inset-0 bg-gradient-to-r from-[#FAA300] to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
     <span className="relative flex items-center space-x-2">
       <svg
         className="w-5 h-5"
@@ -104,7 +104,7 @@ export default function Navbar() {
       }}
       className="group px-6 py-3 rounded-2xl text-black hover:text-white font-bold transition-all duration-500 relative overflow-hidden flex items-center space-x-2"
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#FAA300] to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl pointer-events-none"></div>
       <span className="relative flex items-center space-x-2">
         <svg
           className="w-5 h-5"
@@ -143,19 +143,19 @@ export default function Navbar() {
         <div className="p-3 space-y-1">
           <Link
             href="/portal-ppdb/link-pendaftaran"
-            className="group flex items-center px-4 py-4 text-orange-800 hover:text-white rounded-2xl transition-all duration-300 relative overflow-hidden"
+            className="group flex items-center px-4 py-4 text-black hover:text-white rounded-2xl transition-all duration-300 relative overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-2xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#FAA300] to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-2xl"></div>
             <span className="relative flex items-center space-x-3 font-semibold">
               <span className="text-2xl">📝</span>
-              <span>Link Pendaftaran</span>
+              <span>Pendaftaran</span>
             </span>
           </Link>
           <Link
             href="/portal-ppdb/informasi-rekening"
-            className="group flex items-center px-4 py-4 text-orange-800 hover:text-white rounded-2xl transition-all duration-300 relative overflow-hidden"
+            className="group flex items-center px-4 py-4 text-black hover:text-white rounded-2xl transition-all duration-300 relative overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-2xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#FAA300] to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-2xl"></div>
             <span className="relative flex items-center space-x-3 font-semibold">
               <span className="text-2xl">🏦</span>
               <span>Informasi Rekening</span>
@@ -165,9 +165,9 @@ export default function Navbar() {
           <div className="relative">
             <button
               onClick={() => setIsWebsiteOpen(!isWebsiteOpen)}
-              className="group w-full flex items-center justify-between px-4 py-4 text-orange-800 hover:text-white rounded-2xl transition-all duration-300 relative overflow-hidden"
+              className="group w-full flex items-center justify-between px-4 py-4 text-black hover:text-white rounded-2xl transition-all duration-300 relative overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FAA300] to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-2xl"></div>
               <span className="relative flex items-center space-x-3 font-semibold">
                 <span className="text-2xl">🌐</span>
                 <span>Website Sekolah</span>
@@ -196,9 +196,9 @@ export default function Navbar() {
                   href="https://smppesat.sch.id/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center px-4 py-3 text-orange-700 hover:text-white rounded-xl transition-all duration-300 relative overflow-hidden"
+                  className="group flex items-center px-4 py-3 text-black hover:text-white rounded-xl transition-all duration-300 relative overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#FAA300] to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl"></div>
                   <span className="relative flex items-center space-x-3 font-medium">
                     <span className="text-xl">📚</span>
                     <div>
@@ -213,9 +213,9 @@ export default function Navbar() {
                   href="https://smapesat.sch.id/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center px-4 py-3 text-orange-700 hover:text-white rounded-xl transition-all duration-300 relative overflow-hidden"
+                  className="group flex items-center px-4 py-3 text-black hover:text-white rounded-xl transition-all duration-300 relative overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#FAA300] to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl"></div>
                   <span className="relative flex items-center space-x-3 font-medium">
                     <span className="text-xl">🎓</span>
                     <div>
@@ -231,9 +231,9 @@ export default function Navbar() {
                   href="https://smkpesat.sch.id/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center px-4 py-3 text-orange-700 hover:text-white rounded-xl transition-all duration-300 relative overflow-hidden"
+                  className="group flex items-center px-4 py-3 text-black hover:text-white rounded-xl transition-all duration-300 relative overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#FAA300] to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-xl"></div>
                   <span className="relative flex items-center space-x-3 font-medium">
                     <span className="text-xl">🔧</span>
                     <div>
@@ -288,7 +288,7 @@ export default function Navbar() {
           className="group flex items-center px-6 py-4 rounded-2xl text-gray-800 hover:text-white transition-all duration-500 font-bold relative overflow-hidden"
           onClick={() => setIsOpen(false)}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FAA300] to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
           <span className="relative flex items-center space-x-4">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -308,10 +308,10 @@ export default function Navbar() {
             className="group flex items-center px-6 py-4 rounded-2xl text-gray-800 hover:text-white transition-all duration-500 font-semibold relative overflow-hidden"
             onClick={() => setIsOpen(false)}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#FAA300] to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
             <span className="relative flex items-center space-x-4">
               <span className="text-2xl">📝</span>
-              <span>Link Pendaftaran</span>
+              <span>Pendaftaran</span>
             </span>
           </Link>
           <Link 
@@ -319,7 +319,7 @@ export default function Navbar() {
             className="group flex items-center px-6 py-4 rounded-2xl text-gray-800 hover:text-white transition-all duration-500 font-semibold relative overflow-hidden"
             onClick={() => setIsOpen(false)}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#FAA300] to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
             <span className="relative flex items-center space-x-4">
               <span className="text-2xl">🏦</span>
               <span>Informasi Rekening</span>
@@ -331,7 +331,7 @@ export default function Navbar() {
               onClick={() => setIsMobileWebsiteOpen(!isMobileWebsiteOpen)}
               className="group flex items-center justify-between w-full px-6 py-4 text-gray-800 hover:text-white font-semibold transition-all duration-300 relative overflow-hidden rounded-2xl"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FAA300] to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
               <span className="relative flex items-center space-x-4">
                 <span className="text-2xl">🌐</span>
                 <span>Website Sekolah</span>
@@ -355,7 +355,7 @@ export default function Navbar() {
                   className="group flex items-center px-6 py-3 rounded-2xl text-gray-800 hover:text-white transition-all duration-500 font-medium relative overflow-hidden"
                   onClick={() => setIsOpen(false)}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#FAA300] to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
                   <span className="relative flex items-center space-x-4">
                     <span className="text-xl">📚</span>
                     <div>
@@ -372,7 +372,7 @@ export default function Navbar() {
                   className="group flex items-center px-6 py-3 rounded-2xl text-gray-800 hover:text-white transition-all duration-500 font-medium relative overflow-hidden"
                   onClick={() => setIsOpen(false)}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#FAA300] to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
                   <span className="relative flex items-center space-x-4">
                     <span className="text-xl">🎓</span>
                     <div>
@@ -389,7 +389,7 @@ export default function Navbar() {
                   className="group flex items-center px-6 py-3 rounded-2xl text-gray-800 hover:text-white transition-all duration-500 font-medium relative overflow-hidden"
                   onClick={() => setIsOpen(false)}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#FAA300] to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-2xl"></div>
                   <span className="relative flex items-center space-x-4">
                     <span className="text-xl">🔧</span>
                     <div>
