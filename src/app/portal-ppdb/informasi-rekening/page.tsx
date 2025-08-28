@@ -5,11 +5,11 @@ export default function InformasiRekening() {
     <main className="min-h-screen py-16 px-4 bg-gradient-to-b from-white to-[#f9f9f9]">
       <div className="max-w-4xl mx-auto">
         {/* Judul Halaman */}
-        <div className="flex flex-col items-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-black text-center bg-clip-text text-transparent bg-gradient-to-r from-[#00215E] to-[#FAA300] hover:from-[#FAA300] hover:to-[#00215E] transition-all duration-500 mb-4">
+         <div className="flex flex-col items-center mb-16 text-center">
+          <h2 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-[#FAA300] tracking-tight drop-shadow-sm">
             INFORMASI REKENING
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#00215E] to-[#FAA300] rounded-full mt-4"></div>
+          <div className="mt-3 w-28 h-1 rounded-full bg-[#FAA300]" />
         </div>
 
         {/* Informasi Rekening */}
