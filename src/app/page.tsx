@@ -17,7 +17,7 @@ export default function Home() {
 
   const handleWhatsAppClick = () => {
     // Ganti nomor WhatsApp dan pesan sesuai kebutuhan
-    const phoneNumber = "6285772900719"; // Nomor WhatsApp (format internasional tanpa +)
+    const phoneNumber = "6287711177442"; // Nomor WhatsApp (format internasional tanpa +)
     const message = "Halo! Saya ingin bertanya mengenai pendaftaran PPDB Online Sekolah Pesat.";
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, '_blank');
@@ -37,33 +37,23 @@ export default function Home() {
 
             {/* Title */}
             <h1 className="text-4xl lg:text-5xl font-extrabold text-slate-900 leading-snug mb-6">
-              Mudah, Cepat, dan Transparan <br />{" "}
-              <span className="relative inline-block">
-                PPDB Online
-                <span className="absolute bottom-0 left-0 w-full h-1 bg-amber-400"></span>
-              </span>{" "}
-              untuk Calon Siswa Baru
+              PPDB Sekolah Pesat<br />{" "}
+              SMP Pesat Rising STAR, SMA Pesat School of Talent, dan SMK Pesat IT XPro.
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg text-slate-800 font-medium mb-6">
-              Sistem Informasi <span className="font-bold">PPDB</span> membantu{" "}
-              <span className="font-bold">orang tua</span> dan{" "}
-              <span className="font-bold">calon siswa</span> melakukan proses
-              pendaftaran secara <span className="font-bold">online</span>,
-              praktis, dan dapat diakses di mana saja.
+              Persiapkan dirimu untuk bergabung di <span className="font-bold">Sekolah Pesat!</span> Sekolah Umum 
+              Berbasis Keagamaan, Berakrakter Akhlak Mulia, Pilihan Anak-anak Terpilih!
             </p>
 
             {/* List Fitur */}
             <ul className="space-y-2 text-slate-700 mb-8">
               <li className="flex items-center gap-2">
-                <span className="text-amber-500">✔</span> Formulir pendaftaran online
+                <span className="text-amber-600 font-bold">Gelombang 1 : 4 November 2025 - 28 Februari 2026</span> 
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-amber-500">✔</span> Informasi program dan jurusan
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-amber-500">✔</span> Status pendaftaran transparan
+                <span className="text-amber-600 font-bold">Gelombang 2 : 1 Maret - 11 Juli 2026</span> 
               </li>
             </ul>
 
