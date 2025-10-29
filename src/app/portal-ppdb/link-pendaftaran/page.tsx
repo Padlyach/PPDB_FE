@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function LinkPendaftaran() {
+export default function Page() {
   return (
     <main className="min-h-screen py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#fdfdfd] to-[#f3f6fb]">
       <div className="max-w-7xl mx-auto">

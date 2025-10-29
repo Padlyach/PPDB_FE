@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function InformasiRekening() {
+export default function Page() {
   return (
     <main className="min-h-screen py-16 px-4 bg-gradient-to-b from-white to-[#f9f9f9]">
       <div className="max-w-4xl mx-auto">

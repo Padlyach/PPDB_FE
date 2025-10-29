@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-export default function DanaInvestasi() {
+export default function Page() {
   return (
     <main className="min-h-screen py-16 px-4 bg-gradient-to-b from-white to-[#f9f9f9]">
       <div className="max-w-6xl mx-auto">
