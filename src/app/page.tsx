@@ -4,8 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 
 export default function Page() {
-
   const [showModal, setShowModal] = useState(false);
+  const [showFlowModal, setShowFlowModal] = useState(false);
 
   const handleRequirementsClick = () => {
     setShowModal(true);
@@ -15,9 +15,16 @@ export default function Page() {
     setShowModal(false);
   };
 
+  const handleFlowClick = () => {
+    setShowFlowModal(true);
+  };
+
+  const closeFlowModal = () => {
+    setShowFlowModal(false);
+  };
+
   const handleWhatsAppClick = () => {
-    // Ganti nomor WhatsApp dan pesan sesuai kebutuhan
-    const phoneNumber = "6287711177442"; // Nomor WhatsApp (format internasional tanpa +)
+    const phoneNumber = "6287711177442";
     const message = "Halo! Saya ingin bertanya mengenai pendaftaran PPDB Online Sekolah Pesat.";
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, '_blank');
@@ -44,7 +51,7 @@ export default function Page() {
             {/* Subtitle */}
             <p className="text-lg text-slate-800 font-medium mb-6">
               Persiapkan dirimu untuk bergabung di <span className="font-bold">Sekolah Pesat!</span> Sekolah Umum 
-              Berbasis Keagamaan, Berakrakter Akhlak Mulia, Pilihan Anak-anak Terpilih!
+              Berbasis Keagamaan, Berakrakter Akhlak Mulia, Pilihan Anak-anak Terpilih!
             </p>
 
             {/* List Fitur */}
@@ -53,18 +60,27 @@ export default function Page() {
                 <span className="text-amber-600 font-bold">Gelombang 1 : 4 November 2025 - 28 Februari 2026</span> 
               </li>
               <li className="flex items-center gap-2">
-                <span className="text-amber-600 font-bold">Gelombang 2 : 1 Maret - 11 Juli 2026</span> 
+                <span className="text-amber-600 font-bold">Gelombang 2 : 1 Maret - 11 Juli 2026</span> 
               </li>
             </ul>
 
-            {/* Persyaratan Button */}
-            <button
-              onClick={handleRequirementsClick}
-              className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-colors duration-200 mb-6"
-            >
-              Lihat Persyaratan Pendaftaran
-            </button>
+            {/* Buttons */}
+            <div className="flex flex-wrap gap-4 mb-6">
+              <button
+                onClick={handleRequirementsClick}
+                className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-colors duration-200"
+              >
+                Lihat Persyaratan Pendaftaran
+              </button>
+              <button
+                onClick={handleFlowClick}
+                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-colors duration-200"
+              >
+                Alur Pendaftaran
+              </button>
+            </div>
           </div>
+          
           {/* Right Content - Foto Siswa */}
           <div className="relative max-w-xl w-full">
             <div className="relative overflow-hidden">
@@ -81,9 +97,9 @@ export default function Page() {
         </div>
       </section>
       
-      {/* Modal Overlay */}
+      {/* Modal Persyaratan */}
       {showModal && (
-        <div className="fixed inset-0 bg-white/80 flex items-center justify-center z-50 p-4">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in duration-300">
             {/* Modal Header */}
             <div className="bg-gradient-to-r from-amber-500 to-amber-600 px-8 py-6 rounded-t-2xl">
@@ -105,6 +121,7 @@ export default function Page() {
                 Peserta Didik Baru Sekolah Pesat
               </p>
             </div>
+            
             {/* Modal Content */}
             <div className="px-8 py-6">
               <div className="space-y-4">
@@ -138,11 +155,150 @@ export default function Page() {
         </div>
       )}
 
+      {/* Modal Alur Pendaftaran */}
+      {showFlowModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+            {/* Modal Header */}
+            <div className="bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-6 rounded-t-2xl">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <span className="text-3xl">🔄</span>
+                  <h2 className="text-2xl font-bold text-white">
+                    Alur Pendaftaran PPDB
+                  </h2>
+                </div>
+                <button
+                  onClick={closeFlowModal}
+                  className="text-white hover:text-blue-100 transition-colors duration-200 text-2xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:bg-opacity-20"
+                >
+                  ×
+                </button>
+              </div>
+            </div>
+            
+            {/* Modal Content */}
+            <div className="px-8 py-6">
+              <div className="space-y-6">
+                {/* Step 1 */}
+                <div className="bg-blue-50 p-6 rounded-xl border-2 border-blue-200">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                      1
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-blue-900 mb-2">
+                        Periode Pendaftaran & Pembayaran Awal
+                      </h3>
+                      <ul className="space-y-1 text-slate-700">
+                        <li>• Periode: 25 Oktober - 10 November 2025</li>
+                        <li>• Total pembayaran awal: <span className="font-bold">Rp5.400.000</span></li>
+                        <li>• Rp400.000 → Biaya pendaftaran</li>
+                        <li>• Rp5.000.000 → DP (uang muka) masuk sekolah</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Step 2 */}
+                <div className="bg-blue-50 p-6 rounded-xl border-2 border-blue-200">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                      2
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-blue-900 mb-2">
+                        Penerimaan Surat Undangan Observasi
+                      </h3>
+                      <p className="text-slate-700">
+                        Ayah/bunda akan menerima <span className="font-bold">surat undangan jadwal observasi</span> dari pihak sekolah paling lama 3 hari setelah pembayaran awal.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Step 3 */}
+                <div className="bg-blue-50 p-6 rounded-xl border-2 border-blue-200">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                      3
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-blue-900 mb-2">
+                        Pelaksanaan observasi atau wawancara
+                      </h3>
+                      <p className="text-slate-700">
+                        Dilaksanakan di sekolah sesuai tanggal yang tertera pada Surat Undangan Observasi yang Ayah/bunda terima.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Step 4 */}
+                <div className="bg-blue-50 p-6 rounded-xl border-2 border-blue-200">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                      4
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-blue-900 mb-2">
+                        Pengumuman penerimaan siswa baru (Hasil Observasi)
+                      </h3>
+                      <p className="text-slate-700">
+                        Orang tua akan menerima Surat Keterangan Penerimaan Siswa Baru (Hasil observasi) pada tanggal 20 November 2025.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Step 5 */}
+                <div className="bg-blue-50 p-6 rounded-xl border-2 border-blue-200">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                      5
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-blue-900 mb-2">
+                        Setelah menerima Informasi Penerimaan Siswa Baru
+                      </h3>
+                      <p className="text-slate-700 mb-3">
+                        Melakukan penyelesaian dana investasi maksimal 5 minggu setelah surat kelulusan diterima, dengan ketentuan sebagai berikut:
+                      </p>
+                      <ul className="space-y-2 text-slate-700">
+                        <li>• Diskon Open House sebesar Rp5.000.000 hanya berlaku apabila pelunasan tepat waktu.</li>
+                        <li>• Bagi siswa/i SMP Pesat yang melanjutkan ke SMA/SMK Pesat <span className="font-bold">mendapat diskon alumni sebesar Rp5.000.000</span></li>
+                        <li>• Pelunasan lebih dari 5 minggu → <span className="font-bold text-red-600">Menjadi harga diskon gelombang 1</span></li>
+                        <li>• Pelunasan lebih dari periode Gelombang 1 → <span className="font-bold text-red-600">Menjadi harga gelombang 2</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Important Note */}
+                <div className="bg-gradient-to-r from-orange-50 to-amber-50 p-6 rounded-xl border-2 border-orange-300">
+                  <div className="flex items-start gap-3">
+                    <span className="text-3xl">⚠️</span>
+                    <div>
+                      <h4 className="font-bold text-orange-900 text-lg mb-2">
+                        Penting!
+                      </h4>
+                      <p className="text-orange-800 font-medium">
+                        Apabila siswa dinyatakan tidak diterima sebagai siswa baru, maka Uang DP dikembalikan dengan dikurangi biaya administrasi sebesar <span className="font-bold">Rp5.000.000 (termasuk biaya pendaftaran Rp400.000)</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* WhatsApp Floating Button */}
       <div className="fixed bottom-6 right-6 z-40">
         <button
           onClick={handleWhatsAppClick}
-          className="group relative bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 animate-pulse hover:animate-none"
+          className="group relative bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110"
           aria-label="Chat via WhatsApp"
         >
           {/* WhatsApp Icon */}
