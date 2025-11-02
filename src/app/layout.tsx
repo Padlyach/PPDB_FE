@@ -3,8 +3,8 @@ import Navbar from '@/components/navbar';
 import { ReactNode } from 'react';
 
 export const metadata = {
-  title: 'SMK Informatika Pesat',
-  description: 'Website resmi sekolah SMK Informatika Pesat',
+  title: 'PPDB SEKOLAH PESAT',
+  description: 'Website resmi PPDB Sekolah Pesat',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
