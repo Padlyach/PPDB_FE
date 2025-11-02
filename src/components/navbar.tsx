@@ -58,17 +58,19 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-4 group cursor-pointer">
-            <div className="relative p-2 transition-all duration-500 transform hover:scale-105">
-              <Image
-                src="/smk.png"
-                alt="Logo SMK PESAT"
-                width={90}
-                height={90}
-                className="rounded-full"
-              />
+          <Link href="/" className="flex items-center space-x-4 group cursor-pointer">
+            <div className="flex items-center space-x-4 group cursor-pointer">
+              <div className="relative p-2 transition-all duration-500 transform hover:scale-105">
+                <Image
+                  src="/smk.png"
+                  alt="Logo SMK PESAT"
+                  width={90}
+                  height={90}
+                  className="rounded-full"
+                />
+              </div>
             </div>
-          </div>
+          </Link>
 
          {/* Menu Desktop */}
 <div className="hidden lg:flex items-center space-x-2">
