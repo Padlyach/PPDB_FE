@@ -74,7 +74,7 @@ export default function Page() {
               </button>
               <button
                 onClick={handleFlowClick}
-                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-colors duration-200"
+                className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-colors duration-200"
               >
                 Alur Pendaftaran
               </button>
@@ -97,12 +97,12 @@ export default function Page() {
         </div>
       </section>
       
-      {/* Modal Persyaratan */}
+     {/* Modal Persyaratan - Transparan */}
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in duration-300">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4 backdrop-blur-md bg-black bg-opacity-30">
+          <div className="bg-white bg-opacity-95 backdrop-blur-lg rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-white border-opacity-50">
             {/* Modal Header */}
-            <div className="bg-gradient-to-r from-amber-500 to-amber-600 px-8 py-6 rounded-t-2xl">
+            <div className="bg-gradient-to-r from-amber-500 to-amber-600 bg-opacity-90 px-8 py-6 rounded-t-3xl">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <span className="text-3xl">📋</span>
@@ -134,7 +134,7 @@ export default function Page() {
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200 hover:bg-slate-100 transition-colors duration-200"
+                    className="flex items-center gap-4 p-4 bg-white bg-opacity-60 backdrop-blur-sm rounded-xl border border-amber-200 hover:bg-opacity-80 transition-all duration-200 shadow-sm"
                   >
                     <div className="flex-shrink-0 w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
                       <span className="text-lg">{item.icon}</span>
@@ -155,12 +155,12 @@ export default function Page() {
         </div>
       )}
 
-      {/* Modal Alur Pendaftaran */}
+      {/* Modal Alur Pendaftaran - Transparan */}
       {showFlowModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4 backdrop-blur-md bg-black bg-opacity-30">
+          <div className="bg-white bg-opacity-95 backdrop-blur-lg rounded-3xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-white border-opacity-50">
             {/* Modal Header */}
-            <div className="bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-6 rounded-t-2xl">
+            <div className="bg-gradient-to-r from-blue-500 to-blue-600 bg-opacity-90 px-8 py-6 rounded-t-3xl">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <span className="text-3xl">🔄</span>
@@ -175,15 +175,18 @@ export default function Page() {
                   ×
                 </button>
               </div>
+              <p className="text-blue-100 mt-2 font-medium">
+                Panduan Lengkap Proses Pendaftaran
+              </p>
             </div>
             
             {/* Modal Content */}
             <div className="px-8 py-6">
               <div className="space-y-6">
                 {/* Step 1 */}
-                <div className="bg-blue-50 p-6 rounded-xl border-2 border-blue-200">
+                <div className="bg-white bg-opacity-60 backdrop-blur-sm p-6 rounded-xl border border-blue-200 shadow-sm">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                    <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md">
                       1
                     </div>
                     <div className="flex-1">
@@ -201,9 +204,9 @@ export default function Page() {
                 </div>
 
                 {/* Step 2 */}
-                <div className="bg-blue-50 p-6 rounded-xl border-2 border-blue-200">
+                <div className="bg-white bg-opacity-60 backdrop-blur-sm p-6 rounded-xl border border-blue-200 shadow-sm">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                    <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md">
                       2
                     </div>
                     <div className="flex-1">
@@ -218,9 +221,9 @@ export default function Page() {
                 </div>
 
                 {/* Step 3 */}
-                <div className="bg-blue-50 p-6 rounded-xl border-2 border-blue-200">
+                <div className="bg-white bg-opacity-60 backdrop-blur-sm p-6 rounded-xl border border-blue-200 shadow-sm">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                    <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md">
                       3
                     </div>
                     <div className="flex-1">
@@ -235,9 +238,9 @@ export default function Page() {
                 </div>
 
                 {/* Step 4 */}
-                <div className="bg-blue-50 p-6 rounded-xl border-2 border-blue-200">
+                <div className="bg-white bg-opacity-60 backdrop-blur-sm p-6 rounded-xl border border-blue-200 shadow-sm">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                    <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md">
                       4
                     </div>
                     <div className="flex-1">
@@ -252,9 +255,9 @@ export default function Page() {
                 </div>
 
                 {/* Step 5 */}
-                <div className="bg-blue-50 p-6 rounded-xl border-2 border-blue-200">
+                <div className="bg-white bg-opacity-60 backdrop-blur-sm p-6 rounded-xl border border-blue-200 shadow-sm">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                    <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md">
                       5
                     </div>
                     <div className="flex-1">
@@ -275,7 +278,7 @@ export default function Page() {
                 </div>
 
                 {/* Important Note */}
-                <div className="bg-gradient-to-r from-orange-50 to-amber-50 p-6 rounded-xl border-2 border-orange-300">
+                <div className="bg-gradient-to-r from-orange-100 to-amber-100 bg-opacity-70 backdrop-blur-sm p-6 rounded-xl border border-orange-300 shadow-sm">
                   <div className="flex items-start gap-3">
                     <span className="text-3xl">⚠️</span>
                     <div>
