@@ -45,36 +45,11 @@ export function AlurPendaftaran({ onBack }: AlurPendaftaranProps) {
 
         {/* Timeline Section */}
         <div className="space-y-6 sm:space-y-8">
-          {/* Step 1 - Mengisi Formulir */}
-          <div className="flex gap-4 sm:gap-6">
-            <div className="flex-shrink-0">
-              <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-orange-600 font-bold text-xl sm:text-2xl text-white shadow-md">
-                1
-              </div>
-            </div>
-            <div className="flex-1 bg-white rounded-xl border border-slate-200 p-5 sm:p-6 shadow-sm">
-              <h3 className="mb-3 text-xl sm:text-2xl font-bold text-slate-900">
-                Mengisi Formulir Pendaftaran Calon Siswa Baru
-              </h3>
-              <p className="text-sm sm:text-base text-slate-600 mb-2">
-                Melalui link berikut:
-              </p>
-              <a 
-                href="https://s.id/SekolahPesat" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-semibold text-orange-600 hover:text-orange-700 underline text-sm sm:text-base"
-              >
-                s.id/SekolahPesat
-              </a>
-            </div>
-          </div>
-
           {/* Step 2 - Penyelesaian Dana Pendaftaran */}
           <div className="flex gap-4 sm:gap-6">
             <div className="flex-shrink-0">
               <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-orange-600 font-bold text-xl sm:text-2xl text-white shadow-md">
-                2
+                1
               </div>
             </div>
             <div className="flex-1 bg-white rounded-xl border border-slate-200 p-5 sm:p-6 shadow-sm">
@@ -109,6 +84,31 @@ export function AlurPendaftaran({ onBack }: AlurPendaftaranProps) {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Step 1 - Mengisi Formulir */}
+          <div className="flex gap-4 sm:gap-6">
+            <div className="flex-shrink-0">
+              <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-orange-600 font-bold text-xl sm:text-2xl text-white shadow-md">
+                2
+              </div>
+            </div>
+            <div className="flex-1 bg-white rounded-xl border border-slate-200 p-5 sm:p-6 shadow-sm">
+              <h3 className="mb-3 text-xl sm:text-2xl font-bold text-slate-900">
+                Mengisi Formulir Pendaftaran Calon Siswa Baru
+              </h3>
+              <p className="text-sm sm:text-base text-slate-600 mb-2">
+                Melalui link berikut:
+              </p>
+              <a 
+                href="https://s.id/SekolahPesat" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-semibold text-orange-600 hover:text-orange-700 underline text-sm sm:text-base"
+              >
+                s.id/SekolahPesat
+              </a>
             </div>
           </div>
 
