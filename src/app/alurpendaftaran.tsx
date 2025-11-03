@@ -175,7 +175,7 @@ export function AlurPendaftaran({ onBack }: AlurPendaftaranProps) {
           </div>
         </div>
 
-        {/* Informasi Penting */}
+        {/* Informasi Penting
         <div className="mt-12 sm:mt-16 rounded-xl border-l-4 border-orange-500 bg-orange-50 p-5 sm:p-6">
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0">
@@ -194,7 +194,7 @@ export function AlurPendaftaran({ onBack }: AlurPendaftaranProps) {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
